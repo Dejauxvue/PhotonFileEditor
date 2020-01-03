@@ -1,0 +1,7 @@
+/.vs
+/env
+/packages
+/__pycache__
+/x64
+/support_generator/support_generator/x64
+/support_generator/support_generator/Debug

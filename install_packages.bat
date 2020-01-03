@@ -1,0 +1,1 @@
+.\packages\NuGet.CommandLine.5.4.0\tools\NuGet.exe Install -NonInteractive -OutputDirectory packages .\support_generator\support_generator\packages.config
