@@ -18,6 +18,9 @@
     <ClCompile Include="main_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="photon_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainWindow.h">
@@ -26,8 +29,16 @@
     <ClInclude Include="MySample.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="photon_file.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="$(MSBuildThisFileDirectory)\..\..\native\Win64\mono-urho.dll" />
+    <None Include="$(MSBuildThisFileDirectory)\..\..\native\Win32\mono-urho.dll" />
+    <None Include="$(MSBuildThisFileDirectory)\..\..\native\Win64\mono-urho-d3d.dll" />
+    <None Include="$(MSBuildThisFileDirectory)\..\..\native\Win32\mono-urho-d3d.dll" />
+    <None Include="$(MSBuildThisFileDirectory)\..\..\native\CoreData.pak" />
   </ItemGroup>
 </Project>
