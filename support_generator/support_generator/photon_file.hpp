@@ -56,6 +56,11 @@ public:
 	std::vector<layer_def> layer_defs_;
 	std::vector<std::vector<std::byte>> layer_data_;
 
+	enum occupancy {EMPTY, FILLED};
+	std::vector<occupancy> make_layer_explicit(int layer_index)const;
+
+	System::Drawing::Image^ layer_to_image(const std::vector<photon_file::occupancy>& layer);
+
 	static photon_file read_file(const std::string& path);
 };
 

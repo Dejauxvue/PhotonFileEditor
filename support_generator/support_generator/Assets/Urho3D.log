@@ -1,9 +1,9 @@
-[Fri Jan  3 21:03:04 2020] INFO: Opened log file Urho3D.log
-[Fri Jan  3 21:03:04 2020] INFO: Created 11 worker threads
-[Fri Jan  3 21:03:04 2020] INFO: Added resource package E:/Dokumente/Programmieren/3d_printer/PhotonFileEditor/support_generator/support_generator/Assets/CoreData.pak
-[Fri Jan  3 21:03:04 2020] INFO: Added resource path E:/Dokumente/Programmieren/3d_printer/PhotonFileEditor/support_generator/support_generator/Assets/Data/
-[Fri Jan  3 21:03:05 2020] INFO: Set screen mode 505x140 windowed monitor 0
-[Fri Jan  3 21:03:05 2020] INFO: Initialized input
-[Fri Jan  3 21:03:05 2020] INFO: Initialized user interface
-[Fri Jan  3 21:03:05 2020] INFO: Initialized renderer
-[Fri Jan  3 21:03:05 2020] INFO: Initialized engine
+[Mon Jan  6 22:58:12 2020] INFO: Opened log file Urho3D.log
+[Mon Jan  6 22:58:12 2020] INFO: Created 11 worker threads
+[Mon Jan  6 22:58:12 2020] INFO: Added resource package E:/Dokumente/Programmieren/3d_printer/PhotonFileEditor/support_generator/support_generator/Assets/CoreData.pak
+[Mon Jan  6 22:58:12 2020] INFO: Added resource path E:/Dokumente/Programmieren/3d_printer/PhotonFileEditor/support_generator/support_generator/Assets/Data/
+[Mon Jan  6 22:58:12 2020] INFO: Set screen mode 505x140 windowed monitor 0
+[Mon Jan  6 22:58:12 2020] INFO: Initialized input
+[Mon Jan  6 22:58:12 2020] INFO: Initialized user interface
+[Mon Jan  6 22:58:12 2020] INFO: Initialized renderer
+[Mon Jan  6 22:58:12 2020] INFO: Initialized engine
