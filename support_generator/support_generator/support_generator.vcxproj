@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="data_model.cpp" />
     <ClCompile Include="main_window.cpp" />
     <ClCompile Include="photon_file.cpp" />
   </ItemGroup>
@@ -140,6 +141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="data_model.hpp" />
     <ClInclude Include="MySample.h" />
     <ClInclude Include="MainWindow.h">
       <FileType>CppForm</FileType>

@@ -2,6 +2,8 @@
 #include "photon_file.hpp"
 
 
+
+
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -11,6 +13,6 @@ void Main(array<String^>^ args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);	
-	supportgenerator::MainWindow form;
+	support_generator::MainWindow form;
 	Application::Run(% form);
 }

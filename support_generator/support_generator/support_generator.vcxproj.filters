@@ -21,6 +21,9 @@
     <ClCompile Include="photon_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data_model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainWindow.h">
@@ -30,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="photon_file.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data_model.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

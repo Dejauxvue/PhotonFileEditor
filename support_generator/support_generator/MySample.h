@@ -1,6 +1,6 @@
 #pragma once
 
-namespace supportgenerator
+namespace support_generator
 {
 	using namespace Urho;
 	using namespace Urho::Gui;

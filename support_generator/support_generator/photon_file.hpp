@@ -1,66 +1,101 @@
 #pragma once
+#include <array>
 #include <cstddef>
-#include <vector>
 #include <string>
+#include <vector>
 
-class photon_file
-{
-public:
-	struct file_header {
-		std::byte header[8];
-		float bed_x;
-		float bed_y;
-		float bed_z;
-		int padding_0[3];
-		float layer_height;
-		float exp_time;
-		float exp_bottom_time;
-		float off_time;
-		int count_bottom_layers;
-		int res_x;
-		int res_y;
-		int preview_0_offset;
-		int layer_defs_addr;
-		int count_layers;
-		int preview_1_offset;
-		int unkown6;
-		int proj_type_cast_mirror;
-		int padding_1[6];
-	};
+namespace support_generator {
 
-	struct preview {
-		//this is the part which cn be loaded by reinterpret cast from file
-		struct head_str {
-			int res_x;
-			int res_y;
-			int image_address;
-			int data_length;
-			int padding[4];
-		} head;
+    class photon_file {
+      public:
+        static const int X_SIZE = 1440;
+        static const int Y_SIZE = 2560;
 
-		//IMPORTANT!: image_data must be the last member, else reinterpret cast is undefined!!
-		std::vector<std::byte> image_data;
-	};
+        enum occupancy { EMPTY = 0, FILLED = 1 };
+        typedef std::array<std::array<occupancy, Y_SIZE>, X_SIZE>
+            explicit_layer;
 
-	struct layer_def {
-		float layer_height;
-		float exp_time;
-		float off_time;
-		int image_address;
-		int data_length;
-		int padding[4];
-	};
+        const explicit_layer& layer(int layer_index) const;
+        explicit_layer& layer(int layer_index);
 
-	file_header header_;
-	preview previews_[2];
-	std::vector<layer_def> layer_defs_;
-	std::vector<std::vector<std::byte>> layer_data_;
+        static System::Drawing::Image ^
+            layer_to_image(const explicit_layer& layer);
 
-	enum occupancy {EMPTY, FILLED};
-	std::vector<occupancy> make_layer_explicit(int layer_index)const;
+        static photon_file read_file(const std::string& path);
+        void write_file(const std::string& path) const;
 
-	System::Drawing::Image^ layer_to_image(const std::vector<photon_file::occupancy>& layer);
+      private:
+        photon_file() = default;
+        void init_layer(int layer_index) const;
+        mutable std::vector<bool> explicit_layers_initialized_;
+        mutable std::vector<explicit_layer> explicit_layers_;
 
-	static photon_file read_file(const std::string& path);
-};
+        static void append_bytes_to_byte_vector(std::vector<std::byte>& v,
+                                                const std::byte* b,
+                                                int length);
+        template <typename T>
+        static void append_object_to_byte_vector(std::vector<std::byte>& v,
+                                                 T& o) {
+           append_bytes_to_byte_vector(v, (std::byte*)&o, sizeof(T));
+        }
 
+        std::vector<std::byte> convert_explicit_layer_to_raw(
+            const explicit_layer& l) const;
+
+        /**
+         * structure of the file on HDD
+         */
+        //@{
+        struct file_header {
+            std::byte header[8];
+            float bed_x;
+            float bed_y;
+            float bed_z;
+            int padding_0[3];
+            float layer_height;
+            float exp_time;
+            float exp_bottom_time;
+            float off_time;
+            int count_bottom_layers;
+            int res_x;
+            int res_y;
+            int preview_0_offset;
+            int layer_defs_addr;
+            int count_layers;
+            int preview_1_offset;
+            int unkown6;
+            int proj_type_cast_mirror;
+            int padding_1[6];
+        };
+
+        struct preview {
+            // this is the part which cn be loaded by reinterpret cast from file
+            struct head_str {
+                int res_x;
+                int res_y;
+                int image_address;
+                int data_length;
+                int padding[4];
+            } head;
+
+            // IMPORTANT!: image_data must be the last member, else reinterpret
+            // cast is undefined!!
+            std::vector<std::byte> image_data;
+        };
+
+        struct layer_def {
+            float layer_height;
+            float exp_time;
+            float off_time;
+            int image_address;
+            int data_length;
+            int padding[4];
+        };
+
+        mutable file_header header_;
+        mutable preview previews_[2];
+        mutable std::vector<layer_def> layer_defs_;
+        mutable std::vector<std::vector<std::byte>> raw_layer_data_;
+        //@}
+    };
+} // namespace support_generator
