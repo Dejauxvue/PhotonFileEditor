@@ -7,7 +7,17 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PhotonFileEditor", "PhotonF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C914B33-B360-4BDC-A8E7-43D686E1E370}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "support_generator", "support_generator\support_generator\support_generator.vcxproj", "{354A0294-69B7-4148-925F-78F80CB26CAC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "support_generator_gui", "support_generator_gui\support_generator_gui\support_generator_gui.vcxproj", "{354A0294-69B7-4148-925F-78F80CB26CAC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F0099712-F4A8-453B-B2EA-D320799A8447} = {F0099712-F4A8-453B-B2EA-D320799A8447}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "support_generator_lib", "support_generator_lib\support_generator_lib.vcxproj", "{F0099712-F4A8-453B-B2EA-D320799A8447}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "erase_test", "erase_test\erase_test.vcxproj", "{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F0099712-F4A8-453B-B2EA-D320799A8447} = {F0099712-F4A8-453B-B2EA-D320799A8447}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +45,26 @@ Global
 		{354A0294-69B7-4148-925F-78F80CB26CAC}.Release|x64.Build.0 = Release|x64
 		{354A0294-69B7-4148-925F-78F80CB26CAC}.Release|x86.ActiveCfg = Release|Win32
 		{354A0294-69B7-4148-925F-78F80CB26CAC}.Release|x86.Build.0 = Release|Win32
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Debug|x64.ActiveCfg = Debug|x64
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Debug|x64.Build.0 = Debug|x64
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Debug|x86.ActiveCfg = Debug|Win32
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Debug|x86.Build.0 = Debug|Win32
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Release|Any CPU.ActiveCfg = Release|Win32
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Release|x64.ActiveCfg = Release|x64
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Release|x64.Build.0 = Release|x64
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Release|x86.ActiveCfg = Release|Win32
+		{F0099712-F4A8-453B-B2EA-D320799A8447}.Release|x86.Build.0 = Release|Win32
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Debug|x64.ActiveCfg = Debug|x64
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Debug|x64.Build.0 = Debug|x64
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Debug|x86.ActiveCfg = Debug|Win32
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Debug|x86.Build.0 = Debug|Win32
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Release|Any CPU.ActiveCfg = Release|Win32
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Release|x64.ActiveCfg = Release|x64
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Release|x64.Build.0 = Release|x64
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Release|x86.ActiveCfg = Release|Win32
+		{401CD2F8-CE6D-4553-BA9C-DD664F472CF6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
