@@ -5,3 +5,7 @@
 /x64
 /support_generator/support_generator/x64
 /support_generator/support_generator/Debug
+/erase_test/x64
+/support_generator_lib/x64
+/support_generator_gui/support_generator_gui/Debug
+/support_generator_gui/support_generator_gui/x64
